@@ -152,6 +152,37 @@ To run these workflows, you will need a functional ComfyUI installation with the
   - `Z-Image-Turbo-Fun-Controlnet-Union.safetensors`
   - `yolov8n-face.pt`
 
+### Quick Install for Paperspace / Cloud Environments
+
+For users running ComfyUI on Paperspace or other cloud GPU instances, we provide an automated installation script that handles the complete setup:
+
+```bash
+# Clone this repository
+git clone https://github.com/WulfhardMavuto/Synthid-Bypass.git
+cd Synthid-Bypass
+
+# Make the script executable and run it
+chmod +x install_paperspace.sh
+./install_paperspace.sh
+```
+
+The script will automatically:
+- Install ComfyUI and all dependencies
+- Install ComfyUI Manager and all required custom nodes
+- Download all required models (~15GB total)
+- Copy workflow files to ComfyUI
+- Create a startup script at `~/start_comfyui.sh`
+
+After installation, start ComfyUI with:
+```bash
+~/start_comfyui.sh
+```
+
+Then access ComfyUI via Paperspace's port forwarding or SSH tunnel:
+```bash
+ssh -L 8188:localhost:8188 your-paperspace-instance
+```
+
 ### Instructions
 
 1. Install all required custom nodes and models.
